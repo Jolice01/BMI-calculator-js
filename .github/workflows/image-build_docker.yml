@@ -29,7 +29,7 @@ jobs:
       # Build & Push to Docker Hub
       - name: Build & Push Docker Image
         run: |
-          IMAGE="${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}"
+          IMAGE="${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }} | tr '[:upper:]' '[:lower:]')"
           docker build -t $IMAGE:latest .
           docker push $IMAGE:latest
       
