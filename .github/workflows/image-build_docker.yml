@@ -13,7 +13,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: devopsrunner
+    runs-on: self-hosted
 
     steps:
       - name: Checkout
